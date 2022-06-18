@@ -1,0 +1,47 @@
+.TopBar {
+  background-color: #f4f4f4 !important;
+}
+
+.dropdown-toggle::before {
+  display: none !important;
+}
+
+.sideBar {
+  position: absolute;
+  margin-top: 70px;
+  bottom: 0;
+  /* width: 15%; */
+  background-color: #f4f4f4;
+  transition-duration: 0.2s;
+}
+
+.SidebarLinks,
+.SidebarLinks:hover,
+.SidebarLinks:focus,
+.SidebarLinks:active {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.SidebarLinks {
+  color: #da5747 !important;
+}
+
+.SidebarLinks:hover,
+.SidebarLinks:focus,
+.SidebarLinks:active {
+  color: #ff6b57 !important;
+  font-size: 17px;
+  transition-duration: 0.2s;
+}
+
+.studioCard {
+  min-height: 80px;
+  max-height: 250px;
+}
+
+.card-text {
+  white-space: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
