@@ -1,0 +1,19 @@
+.studioGroup {
+  position: absolute;
+  top: 65px;
+  left: 10%;
+  bottom: 0;
+  right: 0;
+  width: 85% !important;
+}
+
+.editorPage {
+  position: absolute;
+  top: 65px;
+  bottom: 0;
+  right: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}

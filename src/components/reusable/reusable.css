@@ -1,0 +1,108 @@
+.TopBar {
+  background-color: #f4f4f4 !important;
+}
+
+.dropdown-toggle::before {
+  display: none !important;
+}
+
+.sideBar {
+  position: absolute;
+  margin-top: 70px;
+  bottom: 0;
+  /* width: 15%; */
+  background-color: #f4f4f4;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.SidebarLinks,
+.SidebarLinks:hover,
+.SidebarLinks:focus,
+.SidebarLinks:active {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.SidebarLinks {
+  color: #da5747 !important;
+}
+
+.SidebarLinks:hover,
+.SidebarLinks:focus,
+.SidebarLinks:active {
+  color: #ff6b57 !important;
+  font-size: 17px;
+  transition-duration: all 0.3s ease;
+}
+
+.studioCard {
+  min-height: 80px;
+  max-height: 250px;
+}
+
+.studioCard:hover {
+  border: 0.8px solid black !important;
+  transition: all 0.2s ease;
+}
+
+.card-text {
+  white-space: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form-item {
+  position: relative;
+  margin-bottom: 15px
+}
+
+.form-item input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: solid 1px #ccc;
+  transition: all .3s ease;
+  padding: 0 15px
+}
+
+.form-item input:focus {
+  border-color: blue
+}
+
+.form-item label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 13px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 10px;
+  color: #999;
+  transition: all .3s ease
+}
+
+.form-item input:focus+label,
+.form-item input:valid+label {
+  font-size: 11px;
+  top: -5px
+}
+
+.form-item input:focus+label {
+  color: blue
+}
+
+.cardDelete {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cardDelete:hover {
+  background-color: #dc3545;
+  color: #ffffff !important;
+  transform: rotateY(360deg);
+  transition: all 0.3s ease;
+}
