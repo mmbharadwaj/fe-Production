@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/landing" element={<Landing />} />
-          <Route exact path="/landing/login" element={<Login />} />
+          <Route exact path="/landing/login" element={user ? <Navigate replace to="/studio" /> : <Login />} />
           <Route exact path="/landing/signup" element={<SignUp />} />
           {user && <Route exact path='/studio' element={<Studio />} />}
           {user && <Route exact path='/editor/:project' element={<Editor />} />}
