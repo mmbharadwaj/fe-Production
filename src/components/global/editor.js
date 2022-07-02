@@ -130,7 +130,11 @@ export function Editor() {
                   title={<><span><FontAwesomeIcon icon={faPlay}></FontAwesomeIcon> Rendered Video</span></>}
                   body={
                     <>
-                      <video width="100%" src={reduxData?.studio?.editor?.resultUrl} frameBorder="0" controls ></video>
+                      <p className="text-danger">Please refresh this page after 5-10 min to see results</p>
+                      <video width="100%" frameBorder="0" controls >
+                        <source src={reduxData?.studio?.editor?.resultUrl} type="video/mp4" />
+                      </video>
+                      <a target="_blank" href={reduxData?.studio?.editor?.resultUrl}>Download the video for here</a>
                     </>
                   }
                 />
