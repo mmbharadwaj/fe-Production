@@ -6,11 +6,21 @@ const logo = require("C:/Users/ramak/OneDrive/Desktop/NuralSync/website Refactor
 
 export function TopBar(props) {
   const { DP, navLinks } = props
+
+  const logout = () => {
+    try {
+      localStorage.removeItem("token")
+      window.location.href = "/landing/login"
+    } catch (err) {
+      localStorage.removeItem("token")
+      window.location.reload()
+    }
+  }
   return (
     <>
       <Navbar className="TopBar border-bottom border-dark" fixed="top" fluid="md">
         <Container fluid>
-          <Navbar.Brand href="/home" className="d-flex flex-row justify-content-between align-items-center">
+          <Navbar.Brand href="/landing" className="d-flex flex-row justify-content-between align-items-center">
             <img
               alt=""
               src={logo}
@@ -37,10 +47,10 @@ export function TopBar(props) {
                 {DP}
               </Dropdown.Toggle>
               <Dropdown.Menu className="mt-5">
-                <Dropdown.Header href="#/action-1">My Account</Dropdown.Header>
-                <Dropdown.Item href="#/action-2">My Plans</Dropdown.Item>
+                <Dropdown.Header href="/myaccount" disabled>My Account</Dropdown.Header>
+                <Dropdown.Item href="/myplans" disabled>My Plans</Dropdown.Item>
                 <Dropdown.Divider />
-                <Dropdown.Item href="#/action-3" className="fw-bold text-danger">Logout</Dropdown.Item>
+                <Dropdown.Item className="fw-bold text-danger" onClick={logout}>Logout</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Nav>

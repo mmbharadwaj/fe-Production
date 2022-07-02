@@ -9,7 +9,6 @@ export function SideBar() {
   const [sideWidth, setSideWidth] = useState("10%")
 
   const changeSide = () => {
-    console.log(sideWidth)
     sideWidth === "10%" ? setSideWidth("5%") : setSideWidth("10%")
   }
 

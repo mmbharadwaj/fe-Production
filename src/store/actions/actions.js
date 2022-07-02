@@ -3,9 +3,16 @@
  * @param {Object} data this is data will be sent as payload for type global.
  * @returns the object with type and payload in it for global action.
  */
-export const mapSampleDataToStore = (data) => {
+export const mapStudioDataToStore = (data) => {
   return {
-    type: "global",
+    type: "cards",
+    payload: data
+  }
+}
+
+export const mapEditorDataToStore = (data) => {
+  return {
+    type: "editor",
     payload: data
   }
 }

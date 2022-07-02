@@ -1,4 +1,4 @@
-import {mapSampleDataToStore} from './actions'
+import { mapStudioDataToStore, mapEditorDataToStore } from './actions'
 
 /**
  * This function will dispatch the data to TableData in redux Store.
@@ -8,7 +8,15 @@ import {mapSampleDataToStore} from './actions'
 export function sendGlobalDataToStore(data) {
   return function (dispatch) {
     setTimeout(function () {
-      dispatch(mapSampleDataToStore(data));
+      dispatch(mapStudioDataToStore(data))
     }, 1);
   }
 }
+
+// export function sendEditorDataToStore(data) {
+//   return function (dispatch) {
+//     setTimeout(function () {
+//       dispatch(mapEditorDataToStore(data))
+//     }, 1);
+//   }
+// }

@@ -1,12 +1,21 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faSpinner
+} from '@fortawesome/free-solid-svg-icons'
 
 import { Button, Modal } from 'react-bootstrap'
 
 export function DialogueBox(props) {
-  const { show, onHide, title, body, submit } = props
+  const { show, onHide, title, body, submit, loader, hideFooter = true } = props
   const mod = { show, onHide }
   return (
     <>
+      {loader === true && <>
+        <div className="loader d-flex flex-container justify-content-center align-items-center">
+          <FontAwesomeIcon icon={faSpinner} className="rotate fs-1 text-dark" />
+        </div>
+      </>}
       <Modal
         {...mod}
         size="lg"
@@ -21,10 +30,10 @@ export function DialogueBox(props) {
         <Modal.Body className="bg-light">
           {body}
         </Modal.Body>
-        <Modal.Footer className="border-0">
+        {hideFooter  && <Modal.Footer className="border-0">
           <Button onClick={onHide} variant="danger">Close</Button>
           <Button onClick={submit}>Submit</Button>
-        </Modal.Footer>
+        </Modal.Footer>}
       </Modal>
     </>
   )

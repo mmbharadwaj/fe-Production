@@ -1,10 +1,12 @@
-export const countReducer = function (
-  state = { sampleData: []},
+export const countStudio = function (
+  state = {},
   action
 ) {
   switch (action.type) {
-    case "global":
-      return { ...state, sampleData: action.payload }
+    case "cards":
+      return { ...state, cards: action.payload }
+    case "editor":
+      return { ...state, editor: action.payload }
     default:
       return state;
   }

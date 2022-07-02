@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+/* eslint-disable array-callback-return */
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { mapStudioDataToStore } from '../../store/actions/actions'
+import { fetchStudioData } from '../utils/util'
 import {
   Container,
   Row,
@@ -13,6 +17,7 @@ import {
   faGrip,
   faHouseChimney,
 } from '@fortawesome/free-solid-svg-icons'
+
 //Importing Reusable components
 import {
   TopBar,
@@ -23,6 +28,16 @@ import {
 import "./global.css"
 
 export function Studio() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    (async () => {
+      dispatch(mapStudioDataToStore(await fetchStudioData()))
+    })();
+  }, [])
+
+  const reduxData = useSelector((state) => state)
 
   const NavBarLinks = [
     { link: "plan-details", content: <FontAwesomeIcon icon={faCircleArrowUp} />, class: "text-success" },
@@ -36,7 +51,6 @@ export function Studio() {
     setStudioView(groupView)
     setCardView(cardView)
   }
-
 
   return (
     <>
@@ -58,8 +72,19 @@ export function Studio() {
             </div>
           </div>
           <CardBox studioView={studioView} cardView={cardView} cardType="default" title="Create a new Project" />
-          <CardBox studioView={studioView} cardView={cardView} title="srk" />
-          <CardBox studioView={studioView} cardView={cardView} title="brk" />
+          {
+            reduxData?.studio?.cards?.map((e) => {
+              return (
+                <>
+                  <CardBox studioView={studioView} cardView={cardView} title={e.projectName} cardId={e._id} description={
+                    <>
+                      <video width="360" height="215" src={e.video} frameBorder="0"></video>
+                    </>
+                  } />
+                </>
+              )
+            })
+          }
         </Row>
       </Container>
     </>

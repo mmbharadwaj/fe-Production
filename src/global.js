@@ -1,2 +1,6 @@
 export * from "./components/global/studio"
 export * from "./components/global/editor"
+export * from "./components/global/login"
+export * from "./components/global/signUp"
+export * from "./components/global/errorPage"
+export * from "./components/global/landing"
