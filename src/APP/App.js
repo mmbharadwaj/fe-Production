@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/landing/signup" element={<SignUp />} />
           {user && <Route exact path='/studio' element={<Studio />} />}
           {user && <Route exact path='/editor/:project' element={<Editor />} />}
-          <Route path="/" exact element={<Navigate replace to="/landing/login" />} />
+          <Route path="/" exact element={<Navigate replace to="/landing" />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
