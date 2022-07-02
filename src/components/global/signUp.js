@@ -12,7 +12,7 @@ import { CustomInput } from "../../reusable"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"
 
-const logo = require("C:/Users/ramak/OneDrive/Desktop/NuralSync/website Refactor/frontend/src/assets/logo.png")
+const logo = require("../../assets/logo.png")
 
 export function SignUp() {
 

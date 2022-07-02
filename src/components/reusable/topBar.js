@@ -2,7 +2,7 @@ import React from 'react'
 import { Nav, Navbar, Container, Dropdown } from 'react-bootstrap'
 
 import "./reusable.css"
-const logo = require("C:/Users/ramak/OneDrive/Desktop/NuralSync/website Refactor/frontend/src/assets/logo.png")
+const logo = require("../../assets/logo.png")
 
 export function TopBar(props) {
   const { DP, navLinks } = props
