@@ -101,7 +101,7 @@ export function Login() {
               <CustomInput type="password" label="Password" labelColor={"black"} value={pwd} err={pwdErr} onChange={(event) => userPwd((event))} />
               <p className="text-danger">{serr}</p>
               <Button className='mx-5 my-2' variant='light' onClick={() => submit()}>LOGIN</Button>
-              <Button className='mx-5' variant='light'><FontAwesomeIcon icon={faGoogle} className="mx-2" />Login with Google</Button>
+              {/* <Button className='mx-5' variant='light'><FontAwesomeIcon icon={faGoogle} className="mx-2" />Login with Google</Button> */}
               <Link to="/landing/signup" className='text-end'>New to Neural Sync AI ?</Link>
             </div>
           </div>

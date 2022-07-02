@@ -51,7 +51,6 @@ export function Editor() {
   const [speechText, setspeechText] = useState("")
   const [speechTextErr, setspeechTextErr] = useState("")
   const [wordsCount, setWordCount] = useState(0)
-  const [renderdUrl, setRenderdUrl] = useState("")
   const [loader, setLoader] = useState(false)
   const [showFile, setFileShow] = useState(false);
 
@@ -70,7 +69,6 @@ export function Editor() {
   const render = async () => {
     setFileShow(true)
     const res = await fetchRenderdModel(project)
-    setRenderdUrl(res)
   }
 
   const popover = (
@@ -119,10 +117,11 @@ export function Editor() {
               </div>
             </div>
             <div className='videoPreviewPanel col-5 p-2 d-flex flex-column align-items-center'>
-              <div className='video'>
+              <div className='video d-flex flex-column justify-content-between'>
+                <button className="btn btn-dark mx-2 mb-2 mt-2 align-self-end" onClick={() => setFileShow(true)}>Show prev results</button>
                 <video width="100%" src={reduxData?.studio?.editor?.video} frameBorder="0" controls ></video>
               </div>
-              <div className='result-buttons d-flex flex-row justify-content-center'>
+              <div className='result-buttons d-flex flex-row justify-content-center mt-3'>
                 <button className='btn btn-danger mx-2' onClick={render}><FontAwesomeIcon icon={faTrowel} className="mx-2" />Render</button>
                 <DialogueBox
                   loader={loader}
@@ -131,7 +130,7 @@ export function Editor() {
                   title={<><span><FontAwesomeIcon icon={faPlay}></FontAwesomeIcon> Rendered Video</span></>}
                   body={
                     <>
-                      <video width="100%" src={renderdUrl} frameBorder="0" controls ></video>
+                      <video width="100%" src={reduxData?.studio?.editor?.resultUrl} frameBorder="0" controls ></video>
                     </>
                   }
                 />

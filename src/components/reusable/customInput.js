@@ -48,7 +48,7 @@ export function CustomInput(props) {
           <p className="text-start fw-bold p-1" style={{ fontSize: "10px", color: errColor ? errColor : "red" }}>{err}</p>
         </>) : (
         <>
-          <textarea className='form-control' id={id} onChange={onChange} value={err === "" ? value : ""} />
+          <textarea className='form-control' id={id} onChange={onChange} value={err === "" ? value : ""} style={{ height: height }} />
           <p className="text-start fw-bold p-1" style={{ fontSize: "10px", color: errColor ? errColor : "red" }}>{err}</p>
         </>)}
     </>

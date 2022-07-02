@@ -107,7 +107,7 @@ export function SignUp() {
               <CustomInput type="password" label="Password" labelColor={"black"} value={pwd} err={pwdErr} onChange={(event) => userPwd((event))} />
               {serr && <p className="text-danger">{serr}</p>}
               <Button className='mx-5 my-2' variant='light' onClick={submit}>SIGN-UP</Button>
-              <Button className='mx-5' variant='light'><FontAwesomeIcon icon={faGoogle} className="mx-2" />SignUp with Google</Button>
+              {/* <Button className='mx-5' variant='light'><FontAwesomeIcon icon={faGoogle} className="mx-2" />SignUp with Google</Button> */}
               <Link to="/landing/login" className='text-end'>Already have an account ?</Link>
             </div>
           </div>
