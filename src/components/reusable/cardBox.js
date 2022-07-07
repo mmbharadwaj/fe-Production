@@ -51,7 +51,10 @@ export function CardBox(props) {
       formData.append("projectName", file)
       axios.defaults.headers.common['token'] = localStorage.getItem("token")
       const message = await axios.post(url, formData)
-      setLoader(false)
+      console.log("messege" + message)
+      if (message) {
+        setLoader(false)
+      }
       setErr(message?.data?.Message)
       window.location.reload()
     } else {

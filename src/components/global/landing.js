@@ -44,15 +44,15 @@ export function Landing() {
         <div className="carousel-inner" style={{ height: '100vh' }} >
           <div className="carousel-item active" style={{ height: '100vh' }} >
             <img src="images/screen11.png" className="d-block w-100" alt="Banner - 1" style={{ height: '100vh' }} />
-            <div className="carousel-caption d-none d-md-block" style={{ bottom: "42%", right: 0, left: "7%", textAlign: "start" }}>
-              <h1>Create videos from plain text</h1>
+            <div className="carousel-caption d-none d-md-block" style={{ bottom: "42%", right: 0, left: "7.5%", textAlign: "start" }}>
+              <h1 style={{fontSize:"50px"}}>Create videos<br/>from plain text</h1>
               <p>NeuralSync AI empowers brands to go video-first by enbaling them to produce videos from plain text</p>
             </div>
           </div>
           <div className="carousel-item" style={{ height: '100vh' }} >
             <img src="images/screen12.png" className="d-block w-100" alt="Banner - 2" style={{ height: '100vh' }} />
-            <div className="carousel-caption d-none d-md-block" style={{ bottom: "42%", right: 0, left: "7%", textAlign: "start" }}>
-              <h1>Make videos inmultiple languages</h1>
+            <div className="carousel-caption d-none d-md-block" style={{ bottom: "42%", right: 0, left: "7.5%", textAlign: "start" }}>
+              <h1 style={{fontSize:"50px"}}>Make videos<br/>inmultiple languages</h1>
               <p>Some representative placeholder content for the second slide.</p>
             </div>
           </div>
