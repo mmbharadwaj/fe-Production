@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Navbar, Container, Nav, Row } from 'react-bootstrap'
 import emailjs from 'emailjs-com';
 
@@ -7,13 +7,17 @@ export function Landing() {
 
   const form = useRef();
 
+  const [sent, setEmailSent] = useState()
+
   const submit = (e) => {
     e.preventDefault();
 
     emailjs.sendForm('service_45q7ldk', 'template_zuhwdhi', form.current, 'McEIj3PIerE159oAT')
       .then((result) => {
+        setEmailSent(true)
         console.log(result.text);
       }, (error) => {
+        setEmailSent(false)
         console.log(error.text);
       });
   }
@@ -44,16 +48,9 @@ export function Landing() {
         <div className="carousel-inner" style={{ height: '100vh' }} >
           <div className="carousel-item active" style={{ height: '100vh' }} >
             <img src="images/screen11.png" className="d-block w-100" alt="Banner - 1" style={{ height: '100vh' }} />
-            <div className="carousel-caption d-none d-md-block" style={{ bottom: "42%", right: 0, left: "7.5%", textAlign: "start" }}>
-              <h1 style={{fontSize:"50px"}}>Create videos<br/>from plain text</h1>
-              <p>NeuralSync AI empowers brands to go video-first by enbaling them to produce videos from plain text</p>
-            </div>
-          </div>
-          <div className="carousel-item" style={{ height: '100vh' }} >
-            <img src="images/screen12.png" className="d-block w-100" alt="Banner - 2" style={{ height: '100vh' }} />
-            <div className="carousel-caption d-none d-md-block" style={{ bottom: "42%", right: 0, left: "7.5%", textAlign: "start" }}>
-              <h1 style={{fontSize:"50px"}}>Make videos<br/>inmultiple languages</h1>
-              <p>Some representative placeholder content for the second slide.</p>
+            <div className="carousel-caption d-none d-md-block" style={{ bottom: "32%", right: 0, left: "7.5%", textAlign: "start" }}>
+              <h1 className='fw-bold' style={{ fontSize: "30px" }}>Lip Sync talking face <br />  videos with any audio in any language</h1>
+              <p className='mt-5'>Lip sync in the wild videos translated in multiple <br/> languages to create better watching experience</p>
             </div>
           </div>
         </div>
@@ -63,14 +60,17 @@ export function Landing() {
           <div className="d-flex flex-column justify-content-between align-items-center fw-bold p-5 col-12">
             <h1>Create free AI Video</h1>
             <h5>Just type in your script in the below and we will send back your AI video</h5>
+            {sent && <p className='text-danger'>{
+              sent ? "Your requested Email sent successfully." : "Your requested email is not sent successfully Check the details correctly"
+            }</p>}
             <div className='d-flex flex-row justify-content-center' style={{ width: "50%" }}>
               <form ref={form} onSubmit={submit} className="form-control d-flex flex-column">
                 <label for="name" className='form-label'>Name</label>
-                <input id="name" className='form-control' type="text" name="user_name" />
+                <input id="name" className='form-control' type="text" name="user_name" required/>
                 <label for="email" className='form-label'>Email</label>
-                <input id="email" className='form-control' type="email" name="user_email" />
+                <input id="email" className='form-control' type="email" name="user_email" required/>
                 <label for="script" className='form-label'>Enter your script below</label>
-                <textarea id="script" className='form-control' name="message" />
+                <textarea id="script" className='form-control' name="message" required/>
                 <input className='btn btn-primary mt-3 mx-3 align-self-end' type="submit" value="Send" />
               </form>
             </div>
